@@ -1,0 +1,7 @@
+def circle_area(radius,pi):
+    area = pi*(radius**2)
+    return area
+
+print("반지름 :3,pi:3.14","면적",cirle_area(3, 3.14))
+print("반지름 :3,pi:3.1415
+","면적",cirle_area(3, 3.1415))
