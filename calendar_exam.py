@@ -60,7 +60,10 @@ class Calendar:
 
 if __name__ == "__main__":
     calendar = Calendar()
-    calendar.set_date(2021,5,8)
+    year = int (input("년도를 입력하세요 :"))
+    month = int (input("월을 입력하세요 :"))
+    day = int (input("일을 입력하세요:"))
+    calendar.set_date(year, month, day)
     print("년도:", calendar.get_year())
     print("월:", calendar.get_month())
     print("일:", calendar.get_day())

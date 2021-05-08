@@ -32,3 +32,5 @@ if __name__ =="__main__":
 
     print("가격 :", my_car.get_price())
     print("색깔 :", my_car.get_color())
+
+
