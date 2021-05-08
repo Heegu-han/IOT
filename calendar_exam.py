@@ -19,39 +19,32 @@ class Calendar:
     def get_day(self):
         return self._day
 
+    def _is_leap(self,year):
+        if year % 400 == 0:
+            return True
+        elif year % 100 == 0:
+            return False
+        elif year % 4 == 0:
+            return True
+        else:
+            return False
+
     def get_day_of_week(self):
         total_days = 0
         days_of_month = [0,31,28,31,30,31,30,31,31,30,31,30,31]
         day_of_week = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]
 
         for year in range(1, self._year):
-            if year % 4 == 0:
-                if year % 100 == 0:
-                    if year % 400 == 0:
-                        total_days = total_days + 366
-
-                    else:
-                        total_days = total_days + 365
-                else:
-                    total_days = total_days + 366
+            if self._is_leap(year):
+                total_days = total_days + 366
             else:
-                total_days = total_days +365
+                total_days = total_days + 365
 
         for month in range(1, self._month):
             total_days = total_days + days_of_month[month]
 
-        if self._month >= 3:
-            if self._year % 4 == 0:
-                if self._year % 100 == 0:
-                    if self._year % 400 ==0:
-                        total_days = total_days +1
-                    else:
-                        pass
-                else:
-                    total_days = total_days +1
-            else:
-                pass
-
+        if self._month >= 3 and self._is_leap(self._year):
+            total_days = total_days + 1
 
         total_days = total_days + self._day
 
