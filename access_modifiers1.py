@@ -9,3 +9,4 @@ if __name__ == "__main__":
     print(my_car.price) #1
     print(my_car._speed) #2
     print(my_car._Car__color) #3
+
