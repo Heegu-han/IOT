@@ -1,1 +1,1 @@
-# python-ex
+# python 실습
